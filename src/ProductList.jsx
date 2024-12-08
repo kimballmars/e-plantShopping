@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 function ProductList() {
     const [showCart, setShowCart] = useState(false); 
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
+    const dispatch = useDispatch();
 
     const plantsArray = [
         {
@@ -253,7 +254,6 @@ const handlePlantsClick = (e) => {
   const [addedToCart, setAddedToCart] = useState({});
 
   const handleAddToCart = (plant) => {
-    const dispatch = useDispatch();
     dispatch(addItem(plant));
     setAddedToCart((prevState) => ({
         ...prevState,
